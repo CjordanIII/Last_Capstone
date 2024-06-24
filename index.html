@@ -23,12 +23,13 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="mt-2 p-4">
+  <body class="mt-2 m-xl-0">
     <div class="d-flex justify-content-center">
       <i class="bi bi-calendar3" style="font-size: 10rem"></i>
     </div>
-    <h2>Welcome To Event Listener</h2>
-    <form>
+
+    <form class="m-4">
+      <h2>Welcome To Event Listener</h2>
       <div class="row mb-3">
         <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
@@ -43,8 +44,12 @@
           <input type="password" class="form-control" id="inputPassword3" />
         </div>
       </div>
-
-      <button type="submit" class="btn btn-primary w-100">Sign in</button>
+      <!-- todo size -->
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary col-12 col-md-3">
+          Sign in
+        </button>
+      </div>
       <span class="d-flex flex-column"
         ><p class="m-0">Do not have an account?</p>
         <a href="#">Register</a>
