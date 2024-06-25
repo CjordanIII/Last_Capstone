@@ -31,8 +31,11 @@ const logUserIn = async (body) => {
       },
       body: JSON.stringify(body),
     });
+    const res = await result.json();
+
     if (result.ok) {
-      console.log(result);
+      sessionStorage.setItem("jwdToken", res.token);
+      console.log(res);
     } else if (result.status === 400) {
       throw new Error("Invalid username or password");
     } else {
