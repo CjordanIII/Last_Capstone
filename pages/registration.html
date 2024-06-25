@@ -23,6 +23,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script defer src="../scripts/registration.js" type="module"></script>
   </head>
   <body class="mt-2 m-xl-0">
     <div class="d-flex justify-content-center">
@@ -33,19 +34,29 @@
       <form class="m-4 text-xl-center">
         <h2 class="text-center typed-out">Welcome To Event Listener</h2>
         <div class="row mb-3 d-xl-flex justify-content-xl-center">
-          <label for="user" class="col-sm-2 col-form-label col-xl-4"
+          <label for="username" class="col-sm-2 col-form-label col-xl-4"
             >User Name</label
           >
           <div class="col-sm-10">
-            <input type="text" name="user" class="form-control" id="user" />
+            <input
+              type="text"
+              name="username"
+              class="form-control"
+              id="username"
+            />
           </div>
         </div>
         <div class="row mb-3 d-xl-flex justify-content-xl-center">
-          <label for="fName" class="col-sm-2 col-form-label col-xl-4"
+          <label for="fullName" class="col-sm-2 col-form-label col-xl-4"
             >Full Name</label
           >
           <div class="col-sm-10">
-            <input type="text" name="fName" class="form-control" id="fName" />
+            <input
+              type="text"
+              name="fullName"
+              class="form-control"
+              id="fullName"
+            />
           </div>
         </div>
         <div class="row mb-3 d-xl-flex justify-content-xl-center">
@@ -53,7 +64,12 @@
             >Password</label
           >
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="password" />
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="password"
+            />
           </div>
         </div>
         <!-- todo size -->
@@ -64,7 +80,7 @@
         </div>
         <span class="d-flex flex-column"
           ><p class="m-0">Already an account?</p>
-          <a href="#">Sign in </a>
+          <a href="../index.html">Sign in </a>
         </span>
       </form>
     </div>
