@@ -1,9 +1,11 @@
 import { getPost } from "./services/post.js";
 import { postCard } from "./utils/cards.js";
 import { handleStorage } from "./utils/utils.js";
+
 window.onload = handleStorage();
 const postDom = document.getElementById("post");
-
+const createpost = document.getElementById("createpostBtn");
+console.log(createpost);
 async function handlePost() {
   try {
     const post = await getPost();
