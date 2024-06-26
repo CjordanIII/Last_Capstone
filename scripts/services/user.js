@@ -1,8 +1,8 @@
-const baseLink = "http://microbloglite.us-east-2.elasticbeanstalk.com";
+import { baseUrl, fetchUrl } from "../constrantes/baseurl.js";
 
 const createUser = async (body) => {
   try {
-    const result = await fetch(`${baseLink}/api/users`, {
+    const result = await fetch(`${fetchUrl}/api/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -13,7 +13,7 @@ const createUser = async (body) => {
 
     if (result.ok) {
       document.querySelector("#success").classList.toggle("d-none");
-      window.location.href = "http://127.0.0.1:5500/pages/post.html";
+      window.location.href = `${baseUrl}/pages/post.html`;
     } else if (result.status === 409) {
       throw new Error("User Already exist");
     }
@@ -24,7 +24,7 @@ const createUser = async (body) => {
 
 const logUserIn = async (body) => {
   try {
-    const result = await fetch(`${baseLink}/auth/login`, {
+    const result = await fetch(`${fetchUrl}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const logUserIn = async (body) => {
     if (result.ok) {
       sessionStorage.setItem("jwdToken", res.token);
       console.log(res);
-      window.location.href = "http://127.0.0.1:5500/pages/post.html";
+      window.location.href = `${baseUrl}/pages/post.html`;
     } else if (result.status === 400) {
       throw new Error("Invalid username or password");
     } else {
