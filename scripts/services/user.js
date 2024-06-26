@@ -36,6 +36,7 @@ const logUserIn = async (body) => {
     if (result.ok) {
       sessionStorage.setItem("jwdToken", res.token);
       console.log(res);
+      window.location.href = "http://127.0.0.1:5500/pages/post.html";
     } else if (result.status === 400) {
       throw new Error("Invalid username or password");
     } else {
