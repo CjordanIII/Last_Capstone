@@ -1,5 +1,6 @@
 const form = document.querySelector("form");
 import { createUser } from "./services/user.js";
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 

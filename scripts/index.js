@@ -11,6 +11,6 @@ form.addEventListener("submit", (w) => {
   w.preventDefault();
   const formData = new FormData(form);
   const formObj = Object.fromEntries(formData);
-  console.log(formObj);
+
   logUserIn(formObj);
 });
