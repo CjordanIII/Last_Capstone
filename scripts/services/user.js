@@ -13,7 +13,7 @@ const createUser = async (body) => {
 
     if (result.ok) {
       document.querySelector("#success").classList.toggle("d-none");
-      window.location.href = "http://127.0.0.1:5500/";
+      window.location.href = "http://127.0.0.1:5500/pages/post.html";
     } else if (result.status === 409) {
       throw new Error("User Already exist");
     }
