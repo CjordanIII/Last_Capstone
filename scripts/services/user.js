@@ -35,6 +35,7 @@ const logUserIn = async (body) => {
 
     if (result.ok) {
       sessionStorage.setItem("jwdToken", res.token);
+      sessionStorage.setItem("username", res.username);
       console.log(res);
       window.location.href = `${baseUrl}pages/post.html`;
     } else if (result.status === 400) {

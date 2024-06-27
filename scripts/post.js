@@ -1,27 +1,26 @@
 import { getPost, sendpost } from "./services/post.js";
 import { postCard } from "./utils/cards.js";
+import { getuserfromsessionstorage } from "./utils/getuserfromsession.js";
 import { handleStorage } from "./utils/utils.js";
-
 window.onload = handleStorage();
 const postDom = document.getElementById("post");
-const createpost = document.getElementById("createpostBtn");
+const user = document.getElementById("user");
 const form = document.getElementById("modleform");
 async function handlePost() {
   try {
     const post = await getPost();
     postDom.innerHTML = "";
+
     post.forEach((p) => {
-      console.log(p);
       postCard(p, postDom);
     });
-
-    // console.log(post);
   } catch (error) {
     console.log(error);
   }
 }
 handlePost();
 
+user.innerText = getuserfromsessionstorage();
 async function handleModle() {
   try {
     const formData = new FormData(form);

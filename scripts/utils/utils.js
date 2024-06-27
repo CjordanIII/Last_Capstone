@@ -1,6 +1,6 @@
 async function handleStorage() {
   try {
-    const sessionstorage = await sessionStorage.getItem("jwdToken");
+    const sessionstorage = sessionStorage.getItem("jwdToken");
 
     if (sessionstorage === null || sessionstorage === undefined) {
       console.log("working");
