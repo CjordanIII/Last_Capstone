@@ -6,6 +6,7 @@ window.onload = handleStorage();
 const postDom = document.getElementById("post");
 const user = document.getElementById("user");
 const form = document.getElementById("modleform");
+const avatar = document.getElementById("userpage");
 async function handlePost() {
   try {
     const post = await getPost();
@@ -21,6 +22,7 @@ async function handlePost() {
 handlePost();
 
 user.innerText = getuserfromsessionstorage();
+avatar.href = "../pages/profile.html";
 async function handleModle() {
   try {
     const formData = new FormData(form);
