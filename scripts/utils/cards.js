@@ -2,7 +2,7 @@ import { fetchUrl } from "../constrantes/baseurl.js";
 
 const postCard = (data, post) => {
   const { _id, text, username } = data;
-  console.log(_id, text, username);
+
   const postHtml = `
 <div class="card" style="width: 18rem;">
   <div class="card-body">
