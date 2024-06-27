@@ -1,5 +1,5 @@
+import { myApp } from "./auth/auth.js";
 import { logUserIn } from "./services/user.js";
-
 // const sessionStorage = sessionStorage.getItem("jwdToken");
 // if (sessionStorage === null || undefined) {
 //   window.location.href = "http://127.0.0.1:5500/";
@@ -11,6 +11,6 @@ form.addEventListener("submit", (w) => {
   w.preventDefault();
   const formData = new FormData(form);
   const formObj = Object.fromEntries(formData);
-
-  logUserIn(formObj);
+  const myAppForm = { ...formObj, username: formObj.username + " " + myApp };
+  logUserIn(myAppForm);
 });

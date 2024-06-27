@@ -11,6 +11,7 @@ async function handlePost() {
     const post = await getPost();
     postDom.innerHTML = "";
     post.forEach((p) => {
+      console.log(p);
       postCard(p, postDom);
     });
 
@@ -37,4 +38,5 @@ form.addEventListener("submit", (w) => {
 
   handleModle();
   handlePost();
+  form.reset();
 });
