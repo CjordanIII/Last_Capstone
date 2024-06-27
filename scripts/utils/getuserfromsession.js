@@ -10,5 +10,27 @@ function getuserfromsessionstorage() {
 
   return username;
 }
+function handleStorageWithUUid() {
+  const sessionstorage = sessionStorage.getItem("username");
 
-export { getuserfromsessionstorage };
+  return sessionstorage;
+}
+
+function getuserfromsessionstorageandupdate(username) {
+  const includesUUID = sessionStorage.getItem("username").split(" ");
+
+  if (includesUUID.includes(myApp)) {
+    sessionStorage.removeItem("username");
+    sessionStorage.setItem("username", username);
+  }
+}
+function deleteSech() {
+  sessionStorage.removeItem("username");
+  sessionStorage.removeItem("jwdToken");
+}
+export {
+  deleteSech,
+  getuserfromsessionstorage,
+  getuserfromsessionstorageandupdate,
+  handleStorageWithUUid,
+};

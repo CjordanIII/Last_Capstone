@@ -18,5 +18,44 @@
     ></script>
     <script defer src="../scripts/profile.js" type="module"></script>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <form>
+        <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+          <input
+            type="fullName"
+            name="fullName"
+            class="form-control"
+            id="fullName"
+            placeholder="Full Name"
+            value=""
+          />
+        </div>
+          <label for="username" class="form-label">User name</label>
+          <input
+            type="username"
+            name="username"
+            class="form-control"
+            id="username"
+            placeholder="User name"
+            value=""
+          />
+        </div>
+        <div class="mb-3">
+          <label for="bio" class="form-label">Bio</label>
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            name="bio"
+            placeholder="Add bio"
+            value=""
+          ></textarea>
+        </div>
+        <button class="btn btn-primary">Update profile</button>
+      </form>
+      <button class="btn btn-danger" id="logout">Log out</button>
+    </main>
+  </body>
 </html>

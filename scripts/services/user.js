@@ -1,5 +1,6 @@
+import { seshToken } from "../auth/auth.js";
 import { baseUrl, fetchUrl } from "../constrantes/baseurl.js";
-
+import { handleStorageWithUUid } from "../utils/getuserfromsession.js";
 const createUser = async (body) => {
   try {
     const result = await fetch(`${fetchUrl}/api/users`, {
@@ -48,4 +49,58 @@ const logUserIn = async (body) => {
   }
 };
 
-export { createUser, logUserIn };
+const userProfile = async () => {
+  const token = seshToken();
+
+  try {
+    let res = await fetch(`${fetchUrl}/api/users/${handleStorageWithUUid()}`, {
+      headers: {
+        "Content-type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    });
+    res = await res.json();
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const updateUser = async (data) => {
+  const token = seshToken();
+  try {
+    let res = await fetch(`${fetchUrl}/api/users/${handleStorageWithUUid()}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: " Bearer " + token,
+      },
+      body: JSON.stringify({
+        fullName: data.fullName,
+        bio: data.bio,
+      }),
+    });
+
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const logout = async () => {
+  const token = seshToken();
+  try {
+    let res = await fetch(`${fetchUrl}/auth/logout`, {
+      headers: {
+        "Content-type": "application/json",
+        Authorization: " Bearer " + token,
+      },
+    });
+
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { createUser, logout, logUserIn, updateUser, userProfile };
