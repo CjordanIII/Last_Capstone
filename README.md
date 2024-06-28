@@ -37,3 +37,12 @@ To run this project locally:
 ![post page](image-2.png)
 ![post someting page](image-3.png)
 ![Profile page](image-4.png)
+
+## updates after beata
+
+- add delete btn
+- add like btn
+- filter through comments
+- make website pretty
+- allow photos
+- make it better
